@@ -34,3 +34,4 @@ plt.show()
 # sigmoid function
 def sigm(z):
     return 1./(1 + np.exp(-z))
+
