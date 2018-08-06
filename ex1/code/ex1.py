@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 path = '../ex1data1.txt'
 X = []
 Y = []
-with open('../ex1data1.txt') as f:
+with open(path) as f:
     # data = f.read().splitlines()
     for line in f:
         line = line.split(',')
@@ -16,10 +16,10 @@ with open('../ex1data1.txt') as f:
 # print(type(X[0]))
 # print(Y)
 
-# plt.plot(X, Y, '+')
+plt.plot(X, Y, '+')
 plt.xlabel('Population of City in 10,000s')
 plt.ylabel('Profit in $10,000s')
-# plt.show()
+plt.show()
 
 X = [[_] for _ in X]
 Y = [[_] for _ in Y]
@@ -88,4 +88,4 @@ ax = plt.axes(projection='3d')
 
 surf = ax.plot_surface(theta1, theta2, z, cmap='Greens')
 
-plt.show()
+# plt.show()

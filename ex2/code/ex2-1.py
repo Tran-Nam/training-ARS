@@ -90,7 +90,7 @@ def GD(w_init, lr, ite):
 
 w_init = np.array([[0], [0], [0]])
 lr = .3
-ite = 1000000
+ite = 100000000
 
 w_op = GD(w_init, lr, ite)
 print(w_op)
