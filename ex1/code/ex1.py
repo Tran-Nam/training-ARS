@@ -8,23 +8,24 @@ with open(path) as f:
     # data = f.read().splitlines()
     for line in f:
         line = line.split(',')
-        X.append(float(line[0]))
-        Y.append(float(line[1]))
+        X.append([float(line[0])])
+        Y.append([float(line[1])])
         # line[0][0].isdigit()
+X = np.array(X)
+Y = np.array(Y)       
 # ex1data1
 # print(data)
 # print(type(X[0]))
 # print(Y)
 
-plt.plot(X, Y, '+')
+plt.plot(X, Y, 'r+')
 plt.xlabel('Population of City in 10,000s')
 plt.ylabel('Profit in $10,000s')
 plt.show()
 
-X = [[_] for _ in X]
-Y = [[_] for _ in Y]
-X = np.array(X)
-Y = np.array(Y)
+# X = [[_] for _ in X]
+# Y = [[_] for _ in Y]
+
 # print(Y)
 # X = X.T
 
@@ -64,9 +65,10 @@ def GD(theta):
     return theta
 
 theta_op = GD(theta)
-# print(theta_op)
+print(theta_op)
 
-# plt.plot(X, X.dot(theta_op), 'g-')
+plt.plot(X, X.dot(theta_op), 'g-')
+plt.show()
 
 
 theta1 = np.arange(-100, 100, .5)
