@@ -9,3 +9,4 @@ y_tr = mat['y'] # 5000 * 1
 m = X_tr.shape[0]
 d = X_tr.shape[1]
 print(m,d)
+
