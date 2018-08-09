@@ -71,7 +71,7 @@ w_op, cost = GD(w_init)
 print(w_op)
 it = range(100)
 plt.plot(it, cost) #, label='lr = %f' %(lr)
-# plt.show()
+plt.show()
 
 # x_new = np.array([1650, 3])
 # x_nor = normalize(x_new)

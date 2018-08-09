@@ -64,6 +64,15 @@ def GD(theta):
         #     print(it, theta)
     return theta
 
+def GD(theta1_init, theta2_init, lr, ite):
+    theta1 = theta1_init
+    theta2 = theta2_init
+    theta = np.array([[theat1], [theta2]])
+    for it in range(ite):
+        theta = np.array([[theta1], [theta2]])
+        theta1 = theta1 - lr * np.sum(X.dot(theta) - Y) / m
+        theta2 = theta2 - lr * np.sum(X.dot(theta) - Y) / m * 
+
 theta_op = GD(theta)
 print(theta_op)
 
