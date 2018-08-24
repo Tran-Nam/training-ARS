@@ -21,7 +21,7 @@ theta2 = mat['Theta2']
 
 def add_one(x):
     m = x.shape[0]
-    ones = np.ones((m, 1)).reshape(m, 1)
+    ones = np.ones((m, 1))
     x = np.concatenate((ones, x), axis=1)
     return x
 # a = np.array([[1,2], [3, 2]])

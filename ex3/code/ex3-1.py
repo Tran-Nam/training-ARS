@@ -32,43 +32,43 @@ def GD(w_init, lr, ite, X, y):
 w_init = np.zeros((d,1)).reshape((d,1))
 lr = .1
 ite = 5000
-# w_op = GD(w_init, lr, ite)
-# print(w_op.shape)
+w_op = GD(w_init, lr, ite, X_tr, y_tr)
+print(w_op.shape)
 
-# pos0 = np.where(y_tr == 10)[0]
-# posnot0 = np.where(y_tr != 10)[0]
-# y_tr_new = y_tr
-# y_tr_new[pos0] = 1
-# y_tr_new[posnot0] = 0
-# # print(y_tr_new[498:502])
-# # print(posnot0)
+pos0 = np.where(y_tr == 10)[0]
+posnot0 = np.where(y_tr != 10)[0]
+y_tr_new = y_tr
+y_tr_new[pos0] = 1
+y_tr_new[posnot0] = 0
+# print(y_tr_new[498:502])
+# print(posnot0)
 # w_op = GD(w_init, lr, ite, grad)
-# # # print(w_op.shape)
-# result = predict(w_op)
-# truepos = np.where(result >= .5)[0]
-# print(truepos)
-# # print(predict(w_op)[498:502])
+# # print(w_op.shape)
+result = predict(w_op)
+truepos = np.where(result >= .5)[0]
+print(truepos)
+# print(predict(w_op)[498:502])
 
-result = dict()
-for i in range(1, 11):
-    # print(y_tr[998:1002])
-    y_tr_new = y_tr
-    # print(y_tr_new[998:1002])
-    pos = np.where(y_tr_new == i)[0]
-    # print(y_tr_new[1000])
-    posnot = np.where(y_tr_new != i)[0]
-    print(len(pos))
-    print(len(posnot))
-    print(y_tr[998:1002])
-    y_tr_new[pos] = 1
-    y_tr_new[posnot] = 0
-    w_op = GD(w_init, lr, ite, X_tr, y_tr_new)
-    print(y_tr[998:1002])
-    pred = predict(w_op)
-    truepos = np.where(pred >= .5)[0]
-    # print(truepos)
-    result['%d'%i] = truepos
-    # print(y_tr[998:1002])
-print(result)
+# result = dict()
+# for i in range(1, 11):
+#     # print(y_tr[998:1002])
+#     y_tr_new = y_tr
+#     # print(y_tr_new[998:1002])
+#     pos = np.where(y_tr_new == i)[0]
+#     # print(y_tr_new[1000])
+#     posnot = np.where(y_tr_new != i)[0]
+#     print(len(pos))
+#     print(len(posnot))
+#     print(y_tr[998:1002])
+#     y_tr_new[pos] = 1
+#     y_tr_new[posnot] = 0
+#     w_op = GD(w_init, lr, ite, X_tr, y_tr_new)
+#     print(y_tr[998:1002])
+#     pred = predict(w_op)
+#     truepos = np.where(pred >= .5)[0]
+#     # print(truepos)
+#     result['%d'%i] = truepos
+#     # print(y_tr[998:1002])
+# print(result)
 
 
